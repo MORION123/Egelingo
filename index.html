@@ -2,110 +2,111 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="theme-color" content="#4a6cf7">
     <meta name="description" content="EgeLingo - подготовка к ЕГЭ по математике">
-
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="111.png">
+    <link rel="icon" type="image/png" href="111.png">
     <link rel="apple-touch-icon" href="111.png">
-
-    <title>EgeLingo</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>EgeLingo - ЕГЭ Математика</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div id="authScreen" class="auth-screen">
-    <div class="auth-card">
-        <div class="auth-logo">
-            <img src="111.png" class="logo-img">
-            <span>EgeLingo</span>
-        </div>
-
-        <div class="auth-tabs">
-            <button class="auth-tab active" data-tab="login">Вход</button>
-            <button class="auth-tab" data-tab="register">Регистрация</button>
-        </div>
-
-        <div id="loginForm" class="auth-form">
-            <input id="loginUsername" class="auth-input" placeholder="Логин">
-            <input id="loginPassword" class="auth-input" type="password" placeholder="Пароль">
-            <button id="loginBtn" class="auth-submit-btn">Войти</button>
-        </div>
-
-        <div id="registerForm" class="auth-form" style="display:none;">
-            <input id="registerUsername" class="auth-input" placeholder="Логин">
-            <input id="registerPassword" class="auth-input" type="password" placeholder="Пароль">
-            <button id="registerBtn" class="auth-submit-btn">Создать аккаунт</button>
-        </div>
-    </div>
-</div>
-
-<div id="mainApp" style="display:none;">
     <div class="app-container">
-
-        <div class="header">
-            <div class="user-info">
-                <span id="userAvatar">👤</span>
-                <span id="username"></span>
-            </div>
-
-            <div class="level-container">
-                <div id="levelBadge">Уровень 1</div>
-                <div class="xp-bar">
-                    <div id="xpFill" class="xp-fill"></div>
+        <!-- Экран авторизации -->
+        <div class="auth-screen" id="authScreen">
+            <div class="auth-card">
+                <div class="auth-logo">
+                    <img src="111.png" alt="EgeLingo" class="logo-img">
+                    <span>EgeLingo</span>
                 </div>
-                <div id="xpText"></div>
-            </div>
-
-            <button id="logoutBtn">🚪</button>
-        </div>
-
-        <div class="main-content">
-            <div class="task-selector">
-                <h2>Выбери задание</h2>
-                <div id="tasksGrid" class="tasks-grid"></div>
-            </div>
-
-            <div id="taskCard" class="task-card" style="display:none;">
-                <div class="task-header">
-                    <h3 id="taskTitle"></h3>
-                    <button id="closeTaskBtn">✖</button>
+                <h1>Готовься к ЕГЭ<br>по математике</h1>
+                <p>Реальные задания с сайта «Решу ЕГЭ»</p>
+                
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Вход</button>
+                    <button class="auth-tab" data-tab="register">Регистрация</button>
                 </div>
-
-                <div id="taskText" class="task-text"></div>
-
-                <div class="task-input-area">
-                    <input id="taskAnswer" class="task-input" placeholder="Ответ">
-                    <button id="checkBtn" class="check-btn">Проверить</button>
+                
+                <div class="auth-form" id="loginForm">
+                    <input type="text" id="loginUsername" placeholder="Имя пользователя" class="auth-input">
+                    <input type="password" id="loginPassword" placeholder="Пароль" class="auth-input">
+                    <button class="auth-submit-btn" id="loginBtn">Войти</button>
                 </div>
-
-                <div id="taskFeedback" class="task-feedback"></div>
-
-                <div id="taskSolution" class="task-solution" style="display:none;">
-                    <strong>Решение:</strong>
-                    <div id="solutionText"></div>
+                
+                <div class="auth-form" id="registerForm" style="display: none;">
+                    <input type="text" id="registerUsername" placeholder="Имя пользователя" class="auth-input">
+                    <input type="password" id="registerPassword" placeholder="Пароль (мин. 4 символа)" class="auth-input">
+                    <button class="auth-submit-btn" id="registerBtn">Зарегистрироваться</button>
+                </div>
+                
+                <div class="auth-footer">
+                    <span>🎓 21 задание</span>
+                    <span>⭐ Система уровней</span>
+                    <span>📊 Прогресс на устройстве</span>
                 </div>
             </div>
         </div>
 
-        <div id="owlAvatar" class="owl-avatar">
-            <div class="owl-icon">🦉</div>
-            <div id="owlTooltip" class="owl-tooltip"></div>
-        </div>
+        <!-- Основное приложение -->
+        <div class="main-app" id="mainApp" style="display: none;">
+            <header class="header">
+                <div class="user-info">
+                    <div class="user-avatar" id="userAvatar">👤</div>
+                    <span class="username" id="username">Ученик</span>
+                </div>
+                <div class="level-container">
+                    <div class="level-badge" id="levelBadge">📊 Уровень 1</div>
+                    <div class="xp-bar-wrapper">
+                        <div class="xp-bar">
+                            <div class="xp-fill" id="xpFill"></div>
+                        </div>
+                        <span class="xp-text" id="xpText">0 / 100 XP</span>
+                    </div>
+                </div>
+                <button class="logout-btn" id="logoutBtn" title="Выйти">🚪</button>
+            </header>
 
+            <main class="main-content">
+                <!-- Выбор задания -->
+                <div class="task-selector">
+                    <h2>📌 Выбери задание ЕГЭ</h2>
+                    <div class="tasks-grid" id="tasksGrid">
+                        <!-- Кнопки заданий 1-21 будут добавлены через JS -->
+                    </div>
+                </div>
+
+                <!-- Карточка задания -->
+                <div class="task-card" id="taskCard" style="display: none;">
+                    <div class="task-header">
+                        <h3 id="taskTitle">Задание 1</h3>
+                        <button class="close-task" id="closeTaskBtn">✕</button>
+                    </div>
+                    <div class="task-content">
+                        <p class="task-text" id="taskText">Загрузка...</p>
+                        <div class="task-input-area">
+                            <input type="text" id="taskAnswer" placeholder="Введите ответ" class="task-input">
+                            <button class="check-btn" id="checkBtn">Проверить</button>
+                        </div>
+                        <div class="task-feedback" id="taskFeedback"></div>
+                        <div class="task-solution" id="taskSolution" style="display: none;">
+                            <strong>📖 Решение:</strong>
+                            <p id="solutionText"></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <div class="owl-avatar" id="owlAvatar">
+                <div class="owl-icon">🦉</div>
+                <div class="owl-tooltip" id="owlTooltip">Выбери задание и реши его!</div>
+            </div>
+        </div>
     </div>
-</div>
 
-<script src="script.js"></script>
-
-<script>
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js');
-}
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
