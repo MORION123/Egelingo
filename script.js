@@ -1,81 +1,93 @@
-// ==================== БАНК ЗАДАНИЙ ====================
+// ==================== БАНК ЗАДАНИЙ (РЕАЛИСТИЧНЫЕ, БЕЗ ГРАФИКОВ) ====================
 const tasksBank = {
     1: [
-        { text: "Шоколадка стоит 35 рублей. В воскресенье действует акция: заплатив за две, получаешь три. Какое наибольшее количество шоколадок можно получить, имея 200 рублей?", answer: "8", solution: "200 ÷ 35 = 5 штук. По акции за 2 → 3, за 4 → 6, плюс 1 остаётся → 7, но можно купить ещё 2 → 3 (уже 6), остаётся 30 руб → не хватает. Ответ: 8." },
-        { text: "Тетрадь стоит 24 рубля. При покупке более 50 тетрадей скидка 10%. Сколько рублей заплатит покупатель за 60 тетрадей?", answer: "1296", solution: "60 × 24 = 1440 руб. Скидка 10%: 1440 × 0.9 = 1296 руб." },
-        { text: "Флакон шампуня стоит 160 рублей. Во время распродажи скидка 25%. Сколько флаконов можно купить на 1000 рублей?", answer: "8", solution: "160 × 0.75 = 120 руб. 1000 ÷ 120 = 8.33 → 8 флаконов." }
+        { text: "Шоколадка стоит 35 рублей. В воскресенье действует акция: заплатив за две, покупатель получает три (одну в подарок). Какое наибольшее количество шоколадок можно получить, имея 200 рублей?", answer: "7", solution: "200 ÷ 35 = 5 штук (остаток 25). По акции: 2 шоколадки = 3 штуки. Купив 4 шоколадки (2 акции), получим 6 штук. Остаётся 200 - 140 = 60 руб. На 60 руб можно купить ещё 1 шоколадку (35 руб), останется 25 руб. Итого: 6 + 1 = 7." },
+        { text: "Тетрадь стоит 24 рубля. При покупке более 50 тетрадей магазин делает скидку 10% от стоимости всей покупки. Сколько рублей заплатит покупатель за 60 тетрадей?", answer: "1296", solution: "60 × 24 = 1440 руб. Скидка 10%: 1440 × 0.9 = 1296 руб." },
+        { text: "Флакон шампуня стоит 160 рублей. Во время распродажи скидка составляет 25%. Какое наибольшее количество флаконов можно купить на 1000 рублей?", answer: "8", solution: "160 × 0.75 = 120 руб. 1000 ÷ 120 = 8.33 → 8 флаконов." }
     ],
     2: [
-        { text: "На графике показано изменение температуры. Найдите разность между наибольшей и наименьшей температурой за сутки.", answer: "12", solution: "Максимум +8°, минимум -4° → разность 12°." }
+        { text: "В таблице приведены данные о температуре воздуха: 0 ч — -2°, 4 ч — -5°, 8 ч — 0°, 12 ч — +6°, 16 ч — +8°, 20 ч — +3°, 24 ч — -1°. Найдите разность между наибольшей и наименьшей температурой за сутки.", answer: "13", solution: "Наибольшая: +8°, наименьшая: -5°. Разность: 8 - (-5) = 13°." },
+        { text: "Среднемесячная температура: январь -12°, февраль -10°, март -3°, апрель +5°, май +12°, июнь +16°, июль +18°, август +17°, сентябрь +11°, октябрь +4°, ноябрь -3°, декабрь -8°. Найдите разницу между самым тёплым и самым холодным месяцем.", answer: "30", solution: "Самый тёплый: июль +18°, самый холодный: январь -12°. Разность: 18 - (-12) = 30°." }
     ],
     3: [
         { text: "Площадь квадрата равна 36. Найдите его периметр.", answer: "24", solution: "Сторона = √36 = 6. Периметр = 4 × 6 = 24." },
-        { text: "Периметр квадрата равен 32. Найдите его площадь.", answer: "64", solution: "Сторона = 32 ÷ 4 = 8. Площадь = 8² = 64." }
+        { text: "Периметр квадрата равен 32. Найдите его площадь.", answer: "64", solution: "Сторона = 32 ÷ 4 = 8. Площадь = 8² = 64." },
+        { text: "Площадь прямоугольника равна 48, а одна из сторон равна 6. Найдите периметр прямоугольника.", answer: "28", solution: "Вторая сторона = 48 ÷ 6 = 8. Периметр = 2 × (6 + 8) = 28." }
     ],
     4: [
-        { text: "Найдите значение выражения: (3²)³ × 3⁵ ÷ 3⁸", answer: "27", solution: "3⁶ × 3⁵ = 3¹¹; 3¹¹ ÷ 3⁸ = 3³ = 27." }
+        { text: "Найдите значение выражения: (3²)³ × 3⁵ ÷ 3⁸", answer: "27", solution: "3⁶ × 3⁵ = 3¹¹; 3¹¹ ÷ 3⁸ = 3³ = 27." },
+        { text: "Найдите значение выражения: (2⁴)² × 2³ ÷ 2⁷", answer: "16", solution: "2⁸ × 2³ = 2¹¹; 2¹¹ ÷ 2⁷ = 2⁴ = 16." }
     ],
     5: [
-        { text: "Бросают две игральные кости. Найдите вероятность того, что в сумме выпадет 8 очков.", answer: "0.14", solution: "Всего исходов 36. Благоприятные: (2,6),(3,5),(4,4),(5,3),(6,2) — 5. 5/36 ≈ 0.1389 → 0.14." }
+        { text: "В случайном эксперименте бросают две игральные кости. Найдите вероятность того, что в сумме выпадет 8 очков.", answer: "0.14", solution: "Всего исходов 36. Благоприятные: (2,6), (3,5), (4,4), (5,3), (6,2) — 5. 5/36 ≈ 0.1389 → 0.14." },
+        { text: "В случайном эксперименте бросают две игральные кости. Найдите вероятность того, что в сумме выпадет 9 очков.", answer: "0.11", solution: "Благоприятные: (3,6), (4,5), (5,4), (6,3) — 4. 4/36 = 0.111... → 0.11." }
     ],
     6: [
-        { text: "Для квартиры 45 м² натяжной потолок. Цена работы 200 руб/м², материала 300 руб/м². Сколько рублей составит общая стоимость?", answer: "22500", solution: "(200 + 300) × 45 = 500 × 45 = 22500 руб." }
+        { text: "Для квартиры площадью 45 м² заказан натяжной потолок. Цена работы 200 руб/м², стоимость материала 300 руб/м². Сколько рублей составит общая стоимость?", answer: "22500", solution: "(200 + 300) × 45 = 500 × 45 = 22500 руб." }
     ],
     7: [
-        { text: "На рисунке показана цена нефти. Сколько дней цена была выше 70 долларов?", answer: "5", solution: "Считаем точки выше 70." }
+        { text: "На диаграмме показано количество осадков: январь 50 мм, февраль 45 мм, март 40 мм, апрель 35 мм, май 30 мм. Определите, сколько месяцев количество осадков было менее 40 мм.", answer: "2", solution: "Менее 40 мм: апрель 35, май 30 — 2 месяца." }
     ],
     8: [
-        { text: "Выберите верное утверждение: 1) Если два угла равны, то треугольник равнобедренный. 2) Любой прямоугольник — квадрат. 3) Сумма углов треугольника 360°.", answer: "1", solution: "Только первое верно." }
+        { text: "Выберите верное утверждение: 1) Если два угла треугольника равны, то треугольник равнобедренный. 2) Любой прямоугольник является квадратом. 3) Сумма углов треугольника равна 360°. В ответе укажите номер верного утверждения.", answer: "1", solution: "Только первое верно. Второе: не любой прямоугольник — квадрат. Третье: сумма углов треугольника 180°." }
     ],
     9: [
-        { text: "Найдите площадь треугольника на клетчатой бумаге (сторона клетки 1 см).", answer: "6", solution: "S = ½ × 4 × 3 = 6." }
+        { text: "На клетчатой бумаге со стороной клетки 1 см изображён треугольник с основанием 4 см и высотой 3 см. Найдите его площадь.", answer: "6", solution: "S = ½ × 4 × 3 = 6 см²." }
     ],
     10: [
-        { text: "Колесо имеет 5 спиц. Найдите угол между соседними спицами.", answer: "72", solution: "360° ÷ 5 = 72°." }
+        { text: "Колесо имеет 5 спиц. Найдите угол между соседними спицами.", answer: "72", solution: "360° ÷ 5 = 72°." },
+        { text: "Колесо имеет 8 спиц. Найдите угол между соседними спицами.", answer: "45", solution: "360° ÷ 8 = 45°." }
     ],
     11: [
-        { text: "Объём куба равен 125. Найдите площадь его поверхности.", answer: "150", solution: "Сторона = ∛125 = 5. S = 6 × 5² = 150." }
+        { text: "Объём куба равен 125. Найдите площадь его поверхности.", answer: "150", solution: "Сторона = ∛125 = 5. S = 6 × 5² = 150." },
+        { text: "Объём куба равен 64. Найдите площадь его поверхности.", answer: "96", solution: "Сторона = ∛64 = 4. S = 6 × 4² = 96." }
     ],
     12: [
-        { text: "В треугольнике ABC угол C = 90°, AB = 10, AC = 6. Найдите BC.", answer: "8", solution: "BC = √(10² - 6²) = √(100 - 36) = √64 = 8." }
+        { text: "В треугольнике ABC угол C = 90°, AB = 10, AC = 6. Найдите BC.", answer: "8", solution: "BC = √(10² - 6²) = √(100 - 36) = √64 = 8." },
+        { text: "В треугольнике ABC угол C = 90°, AB = 13, BC = 5. Найдите AC.", answer: "12", solution: "AC = √(13² - 5²) = √(169 - 25) = √144 = 12." }
     ],
     13: [
         { text: "В правильной четырёхугольной пирамиде сторона основания 6, апофема 5. Найдите площадь боковой поверхности.", answer: "60", solution: "S = ½ × (4×6) × 5 = 60." }
     ],
     14: [
-        { text: "Найдите значение: 0.7 × 0.3 + 0.3 × 0.3", answer: "0.3", solution: "0.3 × (0.7 + 0.3) = 0.3 × 1 = 0.3." }
+        { text: "Найдите значение выражения: 0.7 × 0.3 + 0.3 × 0.3", answer: "0.3", solution: "0.3 × (0.7 + 0.3) = 0.3 × 1 = 0.3." },
+        { text: "Найдите значение выражения: 0.5 × 0.4 + 0.4 × 0.6", answer: "0.44", solution: "0.4 × (0.5 + 0.6) = 0.4 × 1.1 = 0.44." }
     ],
     15: [
-        { text: "Билет на поезд 1800 руб. Школьникам скидка 50%. Сколько рублей стоят билеты для 4 взрослых и 6 школьников?", answer: "12600", solution: "4×1800=7200, 6×900=5400, итого 12600." }
+        { text: "Билет на поезд стоит 1800 рублей. Школьникам скидка 50%. Сколько рублей стоят билеты для 4 взрослых и 6 школьников?", answer: "12600", solution: "Взрослые: 4 × 1800 = 7200. Школьники: 6 × 900 = 5400. Итого: 12600 руб." }
     ],
     16: [
-        { text: "Упростите: (a - 3)² - a(a - 6)", answer: "9", solution: "a² - 6a + 9 - a² + 6a = 9." }
+        { text: "Упростите выражение: (a - 3)² - a(a - 6)", answer: "9", solution: "a² - 6a + 9 - a² + 6a = 9." },
+        { text: "Упростите выражение: (b + 2)² - b(b + 4)", answer: "4", solution: "b² + 4b + 4 - b² - 4b = 4." }
     ],
     17: [
-        { text: "Решите уравнение: 4ˣ = 64", answer: "3", solution: "4³ = 64 → x = 3." }
+        { text: "Решите уравнение: 4ˣ = 64", answer: "3", solution: "4³ = 64 → x = 3." },
+        { text: "Решите уравнение: 2ˣ = 32", answer: "5", solution: "2⁵ = 32 → x = 5." }
     ],
     18: [
-        { text: "Решите неравенство: 2x - 5 > 3", answer: "4", solution: "2x > 8 → x > 4." }
+        { text: "Решите неравенство: 2x - 5 > 3", answer: "4", solution: "2x > 8 → x > 4." },
+        { text: "Решите неравенство: 3x + 2 ≤ 11", answer: "3", solution: "3x ≤ 9 → x ≤ 3." }
     ],
     19: [
-        { text: "Найдите трёхзначное число, кратное 5 и 9, все цифры различны.", answer: "135", solution: "Число кратно 5 → оканчивается на 0 или 5. Кратно 9 → сумма цифр кратна 9. 135: 1+3+5=9." }
+        { text: "Найдите трёхзначное число, кратное 5 и 9, все цифры которого различны.", answer: "135", solution: "Число кратно 5 → оканчивается на 0 или 5. Кратно 9 → сумма цифр кратна 9. 135: 1+3+5=9." }
     ],
     20: [
-        { text: "Пешеход вышел из А в В со скоростью 5 км/ч. Через 2 часа выехал велосипедист 15 км/ч. На каком расстоянии от А он догонит пешехода?", answer: "15", solution: "Пешеход прошёл 10 км. Скорость сближения 10 км/ч → время 1 ч. Расстояние = 15×1 = 15 км." }
+        { text: "Из пункта А в пункт В вышел пешеход со скоростью 5 км/ч. Через 2 часа из А в В выехал велосипедист со скоростью 15 км/ч. На каком расстоянии от А велосипедист догонит пешехода?", answer: "15", solution: "За 2 часа пешеход прошёл 10 км. Скорость сближения 10 км/ч → время 1 час. Расстояние = 15 × 1 = 15 км." }
     ],
     21: [
-        { text: "Сколько способов рассадить 5 человек на 5 стульях?", answer: "120", solution: "5! = 120." }
+        { text: "Сколько существует различных способов рассадить 5 человек на 5 стульях?", answer: "120", solution: "5! = 120." },
+        { text: "Сколько существует различных способов выбрать 3 человека из 5?", answer: "10", solution: "C(5,3) = 5!/(3!2!) = 10." }
     ]
 };
 
-// Дополняем задания (минимум 3 варианта)
+// Дополняем задания (минимум 2 варианта для каждого)
 for (let i = 1; i <= 21; i++) {
     if (!tasksBank[i]) tasksBank[i] = [];
-    while (tasksBank[i].length < 3) {
+    while (tasksBank[i].length < 2) {
         tasksBank[i].push({
             text: `Задание ${i}. Решите и введите ответ.`,
-            answer: `${i * 5}`,
-            solution: `Решение: ${i * 5}.`
+            answer: `${i}`,
+            solution: `Решение: ${i}.`
         });
     }
 }
@@ -228,9 +240,11 @@ function closeTask() {
 }
 
 function showTip(msg) {
-    owlTooltip.textContent = msg;
-    owlTooltip.style.display = 'block';
-    setTimeout(() => { owlTooltip.style.display = 'none'; }, 2000);
+    if (owlTooltip) {
+        owlTooltip.textContent = msg;
+        owlTooltip.style.display = 'block';
+        setTimeout(() => { owlTooltip.style.display = 'none'; }, 2000);
+    }
 }
 
 function renderTasks() {
@@ -370,44 +384,52 @@ document.addEventListener('DOMContentLoaded', () => {
     xpText = document.getElementById('xpText');
     owlTooltip = document.getElementById('owlTooltip');
     
-    closeTaskBtn.addEventListener('click', closeTask);
-    checkBtn.addEventListener('click', checkAnswer);
-    logoutBtn.addEventListener('click', handleLogout);
-    taskAnswer.addEventListener('keypress', (e) => { if (e.key === 'Enter') checkAnswer(); });
+    if (closeTaskBtn) closeTaskBtn.addEventListener('click', closeTask);
+    if (checkBtn) checkBtn.addEventListener('click', checkAnswer);
+    if (logoutBtn) logoutBtn.addEventListener('click', handleLogout);
+    if (taskAnswer) taskAnswer.addEventListener('keypress', (e) => { if (e.key === 'Enter') checkAnswer(); });
     
-    // Вкладки
     const tabs = document.querySelectorAll('.auth-tab');
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
     
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            if (tab.dataset.tab === 'login') {
-                loginForm.style.display = 'block';
-                registerForm.style.display = 'none';
-            } else {
-                loginForm.style.display = 'none';
-                registerForm.style.display = 'block';
+    if (tabs.length) {
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                if (tab.dataset.tab === 'login') {
+                    loginForm.style.display = 'block';
+                    registerForm.style.display = 'none';
+                } else {
+                    loginForm.style.display = 'none';
+                    registerForm.style.display = 'block';
+                }
+            });
+        });
+    }
+    
+    const loginBtn = document.getElementById('loginBtn');
+    const registerBtn = document.getElementById('registerBtn');
+    const loginUsername = document.getElementById('loginUsername');
+    const loginPassword = document.getElementById('loginPassword');
+    const registerUsername = document.getElementById('registerUsername');
+    const registerPassword = document.getElementById('registerPassword');
+    
+    if (loginBtn) {
+        loginBtn.addEventListener('click', () => {
+            if (login(loginUsername.value, loginPassword.value)) showMainApp();
+        });
+    }
+    
+    if (registerBtn) {
+        registerBtn.addEventListener('click', () => {
+            if (register(registerUsername.value, registerPassword.value)) {
+                login(registerUsername.value, registerPassword.value);
+                showMainApp();
             }
         });
-    });
-    
-    document.getElementById('loginBtn').addEventListener('click', () => {
-        const username = document.getElementById('loginUsername').value;
-        const password = document.getElementById('loginPassword').value;
-        if (login(username, password)) showMainApp();
-    });
-    
-    document.getElementById('registerBtn').addEventListener('click', () => {
-        const username = document.getElementById('registerUsername').value;
-        const password = document.getElementById('registerPassword').value;
-        if (register(username, password)) {
-            login(username, password);
-            showMainApp();
-        }
-    });
+    }
     
     const saved = localStorage.getItem('egelingo_user');
     if (saved) {
@@ -415,7 +437,17 @@ document.addEventListener('DOMContentLoaded', () => {
         showMainApp();
     }
     
-    document.getElementById('owlAvatar').addEventListener('click', () => {
-        showTip('Выбери задание 1–21 и реши его!');
-    });
+    const owlAvatar = document.getElementById('owlAvatar');
+    if (owlAvatar) {
+        owlAvatar.addEventListener('click', () => {
+            showTip('Выбери задание 1–21 и реши его!');
+        });
+    }
+    
+    console.log('✅ Приложение готово!');
 });
+
+// Service Worker для PWA
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/EGE/sw.js').catch(err => console.log('SW not available'));
+}
